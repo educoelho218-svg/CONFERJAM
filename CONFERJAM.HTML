@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Enraizados 2026 — Inscrição</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="hero">
+    <img class="hero-img" src="file:///C:/Users/educo/Downloads/SELADOS.jpeg" alt="Enraizados 2026" />
+    <div class="hero-overlay">
+      <div class="hero-tag"><i class="ti ti-flame"></i> Inscrições abertas</div>
+      <h1 class="hero-title">PRIMEIRA CONFERJAM 2026 — SELADOS</h1>
+      <div class="hero-chips">
+        <span class="chip"><i class="ti ti-calendar"></i> 16 – 18 jul 2026</span>
+        <span class="chip"><i class="ti ti-map-pin"></i> Catedral Batista do Bosque</span>
+        <span class="chip"><i class="ti ti-ticket"></i> A partir de R$ 75</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="steps-bar">
+    <div class="steps">
+      <div class="step"><div class="step-dot active" id="sd1">1</div><div class="step-label active" id="sl1">Seus dados</div></div>
+      <div class="step-line" id="line1"></div>
+      <div class="step"><div class="step-dot" id="sd2">2</div><div class="step-label" id="sl2">Ingresso</div></div>
+      <div class="step-line" id="line2"></div>
+      <div class="step"><div class="step-dot" id="sd3">3</div><div class="step-label" id="sl3">Pagamento</div></div>
+    </div>
+  </div>
+
+  <!-- Etapa 1 -->
+  <div id="page1">
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon"><i class="ti ti-user"></i></div>
+        <div><div class="section-title">Informações pessoais</div><div class="section-sub">Preencha seus dados para a inscrição</div></div>
+      </div>
+      <div class="field-grid">
+        <div class="field-wrap">
+          <span class="field-label">Nome completo</span>
+          <input type="text" id="nome" placeholder="Como consta no documento" />
+        </div>
+        <div class="field-wrap">
+          <span class="field-label">CPF</span>
+          <input type="text" id="cpf" placeholder="000.000.000-00" maxlength="14" />
+        </div>
+      </div>
+      <div class="field-grid two">
+        <div class="field-wrap">
+          <span class="field-label">WhatsApp</span>
+          <input type="tel" id="whats" placeholder="(68) 99999-9999" />
+        </div>
+        <div class="field-wrap">
+          <span class="field-label">E-mail</span>
+          <input type="email" id="email" placeholder="seu@email.com" />
+        </div>
+      </div>
+      <div id="err1" class="err"></div>
+      <div class="nav">
+        <button class="btn-next" id="btn-next-1">Continuar <i class="ti ti-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Etapa 2 -->
+  <div id="page2" class="page-hidden">
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon"><i class="ti ti-ticket"></i></div>
+        <div><div class="section-title">Escolha seu lote</div><div class="section-sub">Preço mais baixo disponível agora</div></div>
+      </div>
+      <div class="lote-grid">
+        <div class="lote sel" data-value="75" data-nome="1º lote">
+          <div class="lote-num">1</div>
+          <div class="lote-body"><div class="lote-name">1º Lote</div><div class="lote-period">01/06 a 19/07/2026</div></div>
+          <span class="lote-badge badge-ok">Disponível</span>
+          <div class="lote-price">R$ 75</div>
+        </div>
+        <div class="lote off">
+          <div class="lote-num">2</div>
+          <div class="lote-body"><div class="lote-name">2º Lote</div><div class="lote-period">20/07 a 20/08/2026</div></div>
+          <span class="lote-badge badge-wait">Em breve</span>
+          <div class="lote-price">R$ 90</div>
+        </div>
+        <div class="lote off">
+          <div class="lote-num">3</div>
+          <div class="lote-body"><div class="lote-name">3º Lote</div><div class="lote-period">21/08 a 05/09/2026</div></div>
+          <span class="lote-badge badge-wait">Em breve</span>
+          <div class="lote-price">R$ 100</div>
+        </div>
+      </div>
+      <div class="qty-row">
+        <div>
+          <div class="qty-label-block">Quantidade de ingressos</div>
+          <div class="qty-hint">Máximo 20 por CPF</div>
+        </div>
+        <div class="qty-ctrl">
+          <button class="q-btn" id="qty-minus" aria-label="Diminuir">−</button>
+          <span class="q-val" id="qv">1</span>
+          <button class="q-btn" id="qty-plus" aria-label="Aumentar">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="nav">
+      <button class="btn-back" id="btn-back-2"><i class="ti ti-arrow-left"></i> Voltar</button>
+      <button class="btn-next" id="btn-next-2">Continuar <i class="ti ti-arrow-right"></i></button>
+    </div>
+  </div>
+
+  <!-- Etapa 3 -->
+  <div id="page3" class="page-hidden">
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon"><i class="ti ti-credit-card"></i></div>
+        <div><div class="section-title">Forma de pagamento</div><div class="section-sub">Escolha como prefere pagar</div></div>
+      </div>
+      <div class="pag-grid">
+        <div class="pag sel" data-nome="Pix">
+          <div class="pag-icon"><i class="ti ti-qrcode"></i></div>Pix
+        </div>
+        <div class="pag" data-nome="Dinheiro">
+          <div class="pag-icon"><i class="ti ti-cash"></i></div>Dinheiro
+        </div>
+        <div class="pag" data-nome="Cartão de crédito">
+          <div class="pag-icon"><i class="ti ti-credit-card"></i></div>Cartão de crédito
+        </div>
+        <div class="pag" data-nome="Cartão de débito">
+          <div class="pag-icon"><i class="ti ti-device-mobile"></i></div>Cartão de débito
+        </div>
+      </div>
+    </div>
+    <div class="summary">
+      <div class="sum-row"><span class="sum-label">Evento</span><span class="sum-val">Enraizados 2026</span></div>
+      <div class="sum-row"><span class="sum-label">Data</span><span class="sum-val">16 – 18 jul 2026</span></div>
+      <div class="sum-row"><span class="sum-label">Lote</span><span class="sum-val" id="sum-lote">1º lote</span></div>
+      <div class="sum-row"><span class="sum-label">Ingressos</span><span class="sum-val" id="sum-qty">1 × R$ 75,00</span></div>
+      <div class="sum-row"><span class="sum-total-label">Total</span><span class="sum-total-val" id="sum-total">R$ 75,00</span></div>
+    </div>
+    <div id="err3" class="err"></div>
+    <div class="nav">
+      <button class="btn-back" id="btn-back-3"><i class="ti ti-arrow-left"></i> Voltar</button>
+      <button class="btn-next" id="btn-next-3"><i class="ti ti-shield-check"></i> Confirmar inscrição</button>
+    </div>
+  </div>
+
+  <!-- Confirmação -->
+  <div id="done" class="page-hidden">
+    <div class="done-wrap">
+      <div class="done-icon"><i class="ti ti-check"></i></div>
+      <h2 class="done-title">Inscrição confirmada!</h2>
+      <p class="done-sub">Sua vaga está garantida. Você receberá a confirmação no e-mail cadastrado.<br>Nos vemos em julho!</p>
+      <div class="done-ticket">
+        <div class="ticket-row"><span class="tk-label">Nome</span><span class="tk-val" id="tk-nome">—</span></div>
+        <div class="ticket-row"><span class="tk-label">Evento</span><span class="tk-val">Enraizados 2026</span></div>
+        <div class="ticket-row"><span class="tk-label">Data</span><span class="tk-val">16 – 18 jul 2026</span></div>
+        <div class="ticket-row"><span class="tk-label">Lote</span><span class="tk-val" id="tk-lote">1º lote</span></div>
+        <div class="ticket-row"><span class="tk-label">Ingressos</span><span class="tk-val" id="tk-qty">1</span></div>
+        <div class="ticket-row"><span class="tk-label">Pagamento</span><span class="tk-val" id="tk-pag">Pix</span></div>
+        <div class="ticket-row"><span class="tk-label">Total</span><span class="tk-val" id="tk-total">R$ 75,00</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
